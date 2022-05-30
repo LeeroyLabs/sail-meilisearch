@@ -1,0 +1,27 @@
+{
+    "name": "leeroy/sail-meilisearch",
+    "description": "MeiliSearch Adapter for SailCMS",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Leeroy\\Search\\MeiliSearch\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marc Giroux",
+            "email": "marc@leeroy.ca"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/Users/marcgiroux/Development/sailcms3"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "leeroy/sailcms": "dev-release/3.0.0"
+    }
+}
