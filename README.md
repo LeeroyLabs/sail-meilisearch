@@ -24,7 +24,9 @@ After that, you can add `Leeroy\\Search\\MeiliSearch` to the search section of t
 "sailcms": {
   "containers": ["Spec"],
   "modules": [],
-  "search": ["Leeroy\\Search\\MeiliSearch"]
+  "search": {
+    "meilisearch": "Leeroy\\Search\\MeiliSearch"
+  }
 }
 ```
 
@@ -35,7 +37,7 @@ After that, you can add `Leeroy\\Search\\MeiliSearch` to the search section of t
 When installed, you need to add the following to your `.env` file.
 
 ```
-SEARCH_ENGINE=meili
+SEARCH_ENGINE=meilisearch
 MEILI_HOST=yourmeilihost
 MEILI_PORT=7700
 MEILI_INDEX=default_index
