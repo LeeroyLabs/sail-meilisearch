@@ -25,7 +25,7 @@ After that, you can add `Leeroy\\Search\\MeiliSearch` to the search section of t
   "containers": ["Spec"],
   "modules": [],
   "search": {
-    "meilisearch": "Leeroy\\Search\\MeiliSearch"
+    "meilisearch": "Leeroy\\Search\\MeiliSearch\\Adapter"
   }
 }
 ```
