@@ -15,7 +15,6 @@
         }
     ],
     "require": {
-        "leeroy/sailcms": "dev-release/3.0.0",
         "meilisearch/meilisearch-php": "^0.23.2"
     }
 }
