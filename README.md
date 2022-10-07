@@ -15,7 +15,7 @@ This will install the package using composer and then update your composer file 
 If you wish to install it manually, you and perform the following
 
 ```bash
-composer install leeroy/sail-meilisearch
+composer require leeroy/sail-meilisearch
 ```
 
 After that, you can add `Leeroy\\Search\\MeiliSearch` to the search section of the sailcms property of your composer.json file. It should look something like this:
@@ -25,7 +25,7 @@ After that, you can add `Leeroy\\Search\\MeiliSearch` to the search section of t
   "containers": ["Spec"],
   "modules": [],
   "search": {
-    "meilisearch": "Leeroy\\Search\\MeiliSearch"
+    "meilisearch": "Leeroy\\Search\\MeiliSearch\\Adapter"
   }
 }
 ```
