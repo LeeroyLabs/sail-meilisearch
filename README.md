@@ -7,7 +7,7 @@ This is the official MeiliSearch adapter for SailCMS. This adapters works like e
 ## Installing
 
 ```bash
-php sail install/official leeroy/sail-meilisearch
+php sail install:official leeroy/sail-meilisearch
 ```
 
 This will install the package using composer and then update your composer file to autoload the package.
