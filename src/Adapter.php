@@ -44,10 +44,28 @@ class Adapter implements SearchAdapter
 
         // Add id to make better use of the add/replace feature
         if (!empty($document['_id'])) {
-            $document['id'] = $document['_id'];
+            $document['id'] = (string)$document['_id'];
         }
 
         $this->client->index($dataIndex)->addDocuments((array)$document);
+    }
+
+    /**
+     *
+     * Delete a document from the database
+     *
+     * @param  string  $id
+     * @param  string  $dataIndex
+     * @return void
+     *
+     */
+    public function remove(string $id, string $dataIndex = '')
+    {
+        if (empty($dataIndex)) {
+            $dataIndex = $_ENV['MEILI_INDEX'] ?? 'data';
+        }
+
+        $this->client->index($dataIndex)->deleteDocument($id);
     }
 
     /**

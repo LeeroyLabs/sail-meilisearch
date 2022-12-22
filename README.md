@@ -46,4 +46,4 @@ MEILI_MASTER_KEY=your_master_key
 
 
 
-You can now enjoy the meilisearch on your site.
+You can now enjoy meilisearch on your site.
