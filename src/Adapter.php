@@ -15,10 +15,10 @@ class Adapter implements SearchAdapter
 
     public function __construct()
     {
-        $url = $_ENV['MEILI_HOST'] . ':' . $_ENV['MEILI_PORT'];
-        $mk = $_ENV['MEILI_MASTER_KEY'];
+        $url = env('MEILI_HOST', 'localhost') . ':' . env('MEILI_PORT', 7700);
+        $mk = env('MEILI_MASTER_KEY', '');
         $this->client = new Client($url, $mk);
-        $this->index = $this->client->index($_ENV['MEILI_INDEX']);
+        $this->index = $this->client->index(env('MEILI_INDEX', 'data'));
     }
 
     /**
@@ -39,7 +39,7 @@ class Adapter implements SearchAdapter
         }
 
         if (empty($dataIndex)) {
-            $dataIndex = $_ENV['MEILI_INDEX'] ?? 'data';
+            $dataIndex = env('MEILI_INDEX', 'data');
         }
 
         // Add id to make better use of the add/replace feature
@@ -62,7 +62,7 @@ class Adapter implements SearchAdapter
     public function remove(string $id, string $dataIndex = '')
     {
         if (empty($dataIndex)) {
-            $dataIndex = $_ENV['MEILI_INDEX'] ?? 'data';
+            $dataIndex = env('MEILI_INDEX', 'default');
         }
 
         $this->client->index($dataIndex)->deleteDocument($id);
@@ -81,7 +81,7 @@ class Adapter implements SearchAdapter
     public function search(string $search, array $meta = [], string $dataIndex = ''): SearchResults
     {
         if ($dataIndex === '') {
-            $dataIndex = $_ENV['MEILI_INDEX'] ?? 'data';
+            $dataIndex = env('MEILI_INDEX', 'data');
         }
 
         // Set the index in which to search
