@@ -6,7 +6,7 @@ use MeiliSearch\Client;
 use MeiliSearch\Endpoints\Indexes;
 use SailCMS\Collection;
 use SailCMS\Types\SearchResults;
-use SailCMS\Search\Adapter as SearchAdapter;
+use SailCMS\Contracts\SearchAdapter;
 
 class Adapter implements SearchAdapter
 {
